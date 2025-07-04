@@ -43,4 +43,45 @@ class UsuarioController extends Controller
        $usuarios=User::find($id);
         return view('admin.usuarios.show', compact('usuarios'));
     }
+
+    public function edit($id){
+        $usuarios=User::findOrFail($id);
+        return view('admin.usuarios.edit', compact('usuarios'));
+    }
+
+    public function update(Request $request, $id){
+        $usuario = User::find($id);
+        $request->validate([
+            'name'=>'required|max:200|unique:users,name,'.$usuario->id,
+            'email'=>'required|max:200|unique:users,email,'.$usuario->id,
+            'password'=>'nullable|max:200|confirmed',
+        ]);
+
+         $usuario->name=$request->name;
+         $usuario->email=$request->email;
+
+         if($request->filled('password')){
+            $usuario->password = Hash::make($request['password']);
+
+         }
+        $usuario->save();
+
+        return redirect()->route('admin.usuarios.index')
+        ->with('mensaje','Usuario Actualizado Correctamente')
+        ->with('icons','success');
+
+    }
+
+     public function confirmDelete($id){
+        $usuarios=User::findOrFail($id);
+        return view('admin.usuarios.delete', compact('usuarios'));
+    }
+    public function destroy($id){
+        User::destroy($id);
+        return redirect()->route('admin.usuarios.index')
+        ->with('mensaje','Usuario Eliminado Correctamente')
+        ->with('icons','success');
+
+    }
+
 }
