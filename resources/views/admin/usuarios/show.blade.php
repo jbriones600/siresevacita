@@ -11,7 +11,7 @@
     <div class="col-md-10">
             <div class="card card-outline card-info">
               <div class="card-header">
-                <h3 class="card-title">Datos Registrados</h3>
+                <h3 class="card-title">Datos Registrados desde usarios jbriones</h3>
 
                 <div class="card-tools">
                     <a href="{{url('admin/usuarios')}}" class="btn btn-primary">

@@ -11,7 +11,7 @@
             <div class="card card-outline card-primary">
             <!-- /.card-header -->
             <div class="card-header">
-                <h3 class="card-title">Usuarios Registrados</h3>
+                <h3 class="card-title">Usuarios Registrados desde jbriones</h3>
 
                         <div class="card-tools">
                             <a href="{{url('admin/usuarios/create')}}" class="btn btn-primary">
