@@ -155,29 +155,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </a>
 
     <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="{{url('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">{{ Auth::user()->name }}</a>
-        </div>
-      </div>
+            <div class="sidebar">
+            <!-- Sidebar user panel (optional) -->
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                <img src="{{url('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+                </div>
+                <div class="info">
+                <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+                </div>
+            </div>
 
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
+          <li class="nav-item menu-close">
             <a href="#" class="nav-link active">
 
               <i class="nav-icon fas bi bi-people-fill"></i>
 
-
+<!--Menu Usuarios-->
               <p>
                 Usuarios:
                 <i class="right fas fa-angle-left"></i>
@@ -198,8 +198,40 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
             </ul>
           </li>
+
+
+<!--Menu Secretaria-->
+
+            <li class="nav-item menu-close">
+            <a href="#" class="nav-link active">
+
+              <i class="nav-icon fas bi bi-person-heart"></i>
+              <p>
+                Secretarias:
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('admin/secretarias/create')}}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Creación de Secretarias</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('admin/secretarias')}}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Listado Secretarias</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+<!--Menu Secretarias-->
+
+
           <li class="nav-item">
-            <a href="#" class="nav-link" style="background-color:rgb(63, 13, 5)">
+            <a href="#" class="nav-link" style="background-color:rgba(212, 42, 16, 1)">
 
               <i class="nav-icon bi bi-door-closed"></i>
               <p>

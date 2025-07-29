@@ -44,4 +44,24 @@ Route::get('/admin/usuarios/{id}/confirm-delete', [App\Http\Controllers\UsuarioC
 //update
 Route::delete('/admin/usuarios/{id}', [App\Http\Controllers\UsuarioController::class, 'destroy'])->name('admin.usuarios.destroy')->middleware(middleware: 'auth');
 
+//////////////////////////////////////////// Secretarias /////////////////////////////////////////////////////
+
+//rutas de admin - usuarios
+Route::get('/admin/secretarias', [App\Http\Controllers\SecretariaController::class, 'index'])->name('admin.secretarias.index')->middleware(middleware: 'auth');
+//Crear usuarios
+Route::get('/admin/secretarias/create', [App\Http\Controllers\SecretariaController::class, 'create'])->name('admin.secretarias.create')->middleware(middleware: 'auth');
+//para guardar informacion atravez de store
+Route::post('/admin/secretarias/create', [App\Http\Controllers\SecretariaController::class, 'store'])->name('admin.secretarias.store')->middleware(middleware: 'auth');
+
+//Show
+Route::get('/admin/secretarias/{id}', [App\Http\Controllers\SecretariaController::class, 'show'])->name('admin.secretarias.show')->middleware(middleware: 'auth');
+//Edit
+Route::get('/admin/secretarias/{id}/edit', [App\Http\Controllers\SecretariaController::class, 'edit'])->name('admin.secretarias.edit')->middleware(middleware: 'auth');
+//update
+Route::put('/admin/secretarias/{id}', [App\Http\Controllers\SecretariaController::class, 'update'])->name('admin.secretarias.update')->middleware(middleware: 'auth');
+//Delete
+Route::get('/admin/secretarias/{id}/confirm-delete', [App\Http\Controllers\SecretariaController::class, 'confirmDelete'])->name('admin.secretarias.confirmDelete')->middleware(middleware: 'auth');
+//update
+Route::delete('/admin/secretarias/{id}', [App\Http\Controllers\SecretariaController::class, 'destroy'])->name('admin.secretarias.destroy')->middleware(middleware: 'auth');
+
 
